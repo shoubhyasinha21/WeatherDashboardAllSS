@@ -3,16 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <meta name="google-site-verification" content="bvpjoV7apAah9sWyaIpsr1SnF01xaBYJ4Mzz_JMGcGU" />
 
     <title>Weather Dashboard SS | Precise 36-Hour Weather Forecast</title>
-    <meta name="description" content="Get a highly accurate 36-hour weather forecast with Weather Dashboard SS. Real-time global updates, humidity, and wind tracking for any city or your current location.">
-    <meta name="keywords" content="weather dashboard ss, 36 hour weather forecast, global weather tracker, real-time weather, Shoubhya Sinha weather app">
-    <meta name="author" content="Shoubhya Sinha">
-
-    <meta property="og:title" content="Weather Dashboard SS | 36-Hour Global Forecast">
-    <meta property="og:description" content="Track live weather and get a detailed next 36-hour forecast for any city worldwide.">
-    <meta property="og:type" content="website">
+    <meta name="description" content="Get a highly accurate 36-hour weather forecast with Weather Dashboard SS. Real-time global updates and city tracking for professional weather analysis.">
 
     <script type="application/ld+json">
     {
@@ -21,38 +16,43 @@
       "name": "Weather Dashboard SS",
       "operatingSystem": "WEB",
       "applicationCategory": "WeatherApplication",
-      "featureList": "36-hour detailed weather forecasting, real-time location tracking, global city search"
+      "featureList": "36-hour detailed weather forecasting, global city search"
     }
     </script>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        h2 {
+            text-align: center;
+            width: 100%;
+            margin-top: 30px;
+        }
+        #forecast {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centers the forecast items */
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto; /* Centers the container itself */
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>🌍 Weather Dashboard SS (All Across the Globe)</h1>
-</header>
+<h1 style="text-align: center;">🌍 Weather Dashboard SS (All Across the Globe)</h1>
 
-<main>
-    <section class="search-box">
-        <input type="text" id="city" placeholder="Enter city name">
-        <button onclick="getWeather()">Search</button>
-        <button onclick="getLocationWeather()">📍 My Location</button>
-    </section>
+<div class="search-box" style="text-align: center;">
+    <input type="text" id="city" placeholder="Enter city name">
+    <button onclick="getWeather()">Search</button>
+    <button onclick="getLocationWeather()">📍 My Location</button>
+</div>
 
-    <section id="weather" aria-live="polite">
-        </section>
+<div id="weather" style="text-align: center;"></div>
 
-    <section>
-        <h2>Next 36 Hours Forecast</h2>
-        <p style="color: #666; font-size: 0.9em;">Detailed hour-by-hour weather data and atmospheric conditions.</p>
-        <div id="forecast"></div>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2026 Weather Dashboard SS by Shoubhya Sinha</p>
-</footer>
+<h2>Next 36 Hours</h2>
+<div id="forecast"></div>
 
 <script src="script.js"></script>
 </body>
