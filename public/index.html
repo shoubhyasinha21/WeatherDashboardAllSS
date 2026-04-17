@@ -22,8 +22,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center; 
-            justify-content: space-between; 
+            align-items: center;
             width: 100vw;
             height: 100vh; /* Lock height to viewport */
             overflow: hidden; /* No scrolling */
@@ -61,7 +60,7 @@
         input {
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid Gray;
+            border: none;
             width: 250px;
             outline: none;
         }
@@ -69,25 +68,32 @@
         button {
             padding: 10px 15px;
             cursor: pointer;
-            background-color: RoyalBlue;
-            color: White;
+            background-color: linear-gradient ( tobottom,Gold,Orange);
+            color: Black;
             border: none;
             border-radius: 5px;
-            font-weight: 600;
+            font-weight: bold;
             transition: background 0.3s ease;
         }
 
         button:hover {
-            background-color: #3b5998;
+            background-color: linear-gradient (tobottom ,Orange,Tomato);
+            color:White;
         }
 
         /* Weather result styling */
         #weather {
-            min-height: 60px;
-            margin: 10px 0;
-            font-weight: 600;
+            margin-top: 20px;
+            width: 90%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            color: #333;
         }
 
         /* Canvas for Weather Visualization */
@@ -183,7 +189,7 @@
         <h1>🌍 Weather Dashboard SS</h1>
 
         <div class="search-box">
-            <input type="text" id="city" placeholder="Enter city name (e.g. London)">
+            <input type="text" id="city" placeholder="Enter city name ">
             <button onclick="getWeather()">Search</button>
             <button onclick="getLocationWeather()">📍 My Location</button>
         </div>
