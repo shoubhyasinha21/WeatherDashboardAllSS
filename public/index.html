@@ -1,16 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <meta name="google-site-verification" content="bvpjoV7apAah9sWyaIpsr1SnF01xaBYJ4Mzz_JMGcGU" />
-    <title>Weather Dashboard SS All</title>
+    <meta charset="UTF-8">
+
+    <!-- MOBILE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GOOGLE VERIFICATION -->
+    <meta name="google-site-verification" content="bvpjoV7apAah9sWyaIpsr1SnF01xaBYJ4Mzz_JMGcGU" />
+
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://weatherdashboardssall.onrender.com/">
+
+    <!-- SEO META -->
+    <meta name="description" content="Check real-time weather, 36-hour forecast, and live global weather updates with Weather Dashboard SS. Fast, accurate and easy to use.">
+    <meta name="keywords" content="weather app, live weather, forecast, weather dashboard, global weather, India weather">
+    <meta name="author" content="Shoubhya Sinha">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Weather Dashboard SS">
+    <meta property="og:description" content="Live global weather with forecast and animations">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weatherdashboardssall.onrender.com/">
+    <meta property="og:image" content="https://weatherdashboardssall.onrender.com/preview.png">
+
+    <title>Weather Dashboard SS | Live Global Weather Forecast</title>
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- FAVICON -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- STRUCTURED DATA (APP) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Weather Dashboard SS",
+      "url": "https://weatherdashboardssall.onrender.com/",
+      "description": "A global weather dashboard providing real-time weather updates, temperature, and 36-hour forecast for any city.",
+      "applicationCategory": "WeatherApplication",
+      "operatingSystem": "All",
+      "author": {
+        "@type": "Person",
+        "name": "Shoubhya Sinha"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- STRUCTURED DATA (WEBSITE) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Weather Dashboard SS",
+      "url": "https://weatherdashboardssall.onrender.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://weatherdashboardssall.onrender.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
 </head>
+
 <body>
 
 <h1>🌍 Weather Dashboard SS (All Across the Globe)</h1>
 
 <div class="search-box">
-    <input type="text" id="city" placeholder="Enter city name">
+    <input type="text" id="city" placeholder="Enter city name (e.g. London)">
     <button onclick="getWeather()">Search</button>
     <button onclick="getLocationWeather()">📍 My Location</button>
 </div>
@@ -20,6 +89,39 @@
 <h2>Next 36 Hours</h2>
 <div id="forecast"></div>
 
+<!-- SEO CONTENT -->
+<section style="max-width:800px; padding:20px; text-align:center;">
+    <h2>Global Weather Forecast Tool</h2>
+    <p>
+        Weather Dashboard SS is a modern weather application that allows users
+        to check real-time weather conditions, temperature, and a 36-hour forecast
+        for cities across the globe. Built using live weather API data, it provides
+        accurate and fast updates for better planning.
+    </p>
+
+    <h3>Features</h3>
+    <ul style="list-style:none; padding:0;">
+        <li>✔ Real-time weather updates</li>
+        <li>✔ 36-hour forecast</li>
+        <li>✔ Location-based weather detection</li>
+        <li>✔ Animated weather backgrounds</li>
+    </ul>
+</section>
+
+<!-- ✅ PROFESSIONAL FOOTER -->
+<footer style="
+    margin-top: 40px;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: lightgray;
+    opacity: 0.8;
+">
+    © 2026 Weather Dashboard SS | Developed by <strong>Shoubhya Sinha</strong>
+</footer>
+
+<!-- JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
