@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard SS | Professional</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Weather Dashboard SS | Global Forecast</title>
+    <meta name="description" content="Get real-time weather updates and a 36-hour forecast for any city worldwide with Weather Dashboard SS.">
+    <meta name="keywords" content="weather, forecast, global weather, 36-hour forecast, weather dashboard">
+    <meta name="author" content="Shoubhya Sinha">
+
+    <meta name="google-site-verification" content="bvpjoV7apAah9sWyaIpsr1SnF01xaBYJ4Mzz_JMGcGU" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Weather Dashboard SS (All Across the Globe)">
+    <meta property="og:description" content="Precise 36-hour weather analysis and real-time tracking.">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Global Reset and No-Scroll */
+        /* Responsive Reset */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -16,203 +27,124 @@
         }
 
         body {
-            /* Matching the screenshot gradient exactly */
-            background: linear-gradient(135deg, Gold, Orange);
             font-family: 'Poppins', sans-serif;
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden; /* Prevents scrolling */
-            color: White;
-        }
-
-        .main-container {
-            flex: 1;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             padding: 20px;
-            width: 100%;
+            min-height: 100vh;
         }
 
-        /* Title styling */
+        /* Responsive Container */
         h1 {
-            font-size: clamp(1.2rem, 5vw, 2.2rem); /* Responsive font */
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
             text-align: center;
+            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+            color: #1a73e8;
         }
 
-        /* Centered Search Group */
+        /* Search Box Responsive Layout */
         .search-box {
             display: flex;
-            flex-wrap: wrap; /* Allows stacking on small mobile screens */
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
             gap: 10px;
             width: 100%;
-            margin-bottom: 25px;
+            max-width: 600px;
+            margin-bottom: 30px;
         }
 
         input {
-            padding: 12px 15px;
-            width: 100%;
-            max-width: 300px;
-            border: none;
+            flex: 1;
+            min-width: 200px;
+            padding: 12px;
+            border: 1px solid #ccc;
             border-radius: 8px;
             font-size: 1rem;
-            outline: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .btn {
+        button {
             padding: 12px 20px;
             border: none;
             border-radius: 8px;
+            background-color: #1a73e8;
+            color: white;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            transition: background 0.3s;
         }
 
-        .btn-search { background-color: rgba(0,0,0,0.1); color: Black; }
-        .btn-location { background-color: Wheat; color: Crimson; }
-        .btn:hover { opacity: 0.8; transform: translateY(-1px); }
+        button:hover {
+            background-color: #1557b0;
+        }
 
-        /* Weather Card from Image */
+        /* Main Weather Display */
         #weather {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .city-name { font-size: 1.8rem; color: Crimson; font-weight: bold; }
-        .temp { font-size: 2.5rem; margin: 5px 0; }
-        .details { font-size: 0.9rem; opacity: 0.9; }
-
-        /* Responsive Canvas Container */
-        .chart-section {
             width: 100%;
             max-width: 800px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 10px;
-            position: relative;
-        }
-
-        h3 { 
-            font-size: 1rem; 
-            margin-bottom: 10px; 
-            text-align: center; 
-            font-weight: 300; 
-        }
-
-        canvas {
-            width: 100% !important;
-            height: auto !important;
-            max-height: 200px;
-        }
-
-        footer {
-            padding: 10px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
             text-align: center;
-            font-size: 0.75rem;
-            background: rgba(0,0,0,0.05);
         }
 
-        /* Mobile Adjustments */
+        h2 {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Forecast Grid: Changes from 4 columns to 1 depending on screen size */
+        #forecast {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .forecast-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* Mobile specific adjustments */
         @media (max-width: 480px) {
-            .search-box { flex-direction: column; }
-            input { max-width: 100%; }
-            .btn { width: 100%; max-width: 300px; }
-            body { overflow-y: auto; } /* Allow scroll only on tiny phones if content overflows */
+            .search-box {
+                flex-direction: column;
+            }
+            button {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <h1>🌍 Weather Dashboard SS (All Across the Globe)</h1>
+    <h1>🌍 Weather Dashboard SS (All Across the Globe)</h1>
 
-        <div class="search-box">
-            <input type="text" id="city" placeholder="Enter city name">
-            <button class="btn btn-search" onclick="getWeather()">Search</button>
-            <button class="btn btn-location" onclick="getLocationWeather()">📍 My Location</button>
-        </div>
-
-        <div id="weather">
-            <div class="city-name">Giridih</div>
-            <div class="temp">☀️ 39°C</div>
-            <div class="details">
-                <p>💧 Humidity: 13%</p>
-                <p>🍃 Wind: 3.75 m/s</p>
-            </div>
-        </div>
-
-        <div class="chart-section">
-            <h3>36-Hour Temperature Forecast</h3>
-            <canvas id="weatherCanvas"></canvas>
-        </div>
+    <div class="search-box">
+        <input type="text" id="city" placeholder="Enter city name">
+        <button onclick="getWeather()">Search</button>
+        <button onclick="getLocationWeather()">📍 My Location</button>
     </div>
 
-    <footer>
-        <p>© Weather Dashboard by Shoubhya Sinha | 2026 Professional Edition</p>
-    </footer>
+    <div id="weather">
+        <p>Enter a city or use your location to see current weather details.</p>
+    </div>
+
+    <h2>Next 36 Hours</h2>
+    
+    <div id="forecast">
+        </div>
 
     <script src="script.js"></script>
-    <script>
-        const canvas = document.getElementById('weatherCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // Function to draw a responsive 36-hour trend
-        function draw36HourChart() {
-            const w = canvas.offsetWidth;
-            const h = canvas.offsetHeight;
-            canvas.width = w;
-            canvas.height = h;
-
-            ctx.clearRect(0, 0, w, h);
-            
-            // Stylings
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.8)";
-            ctx.lineWidth = 2;
-            ctx.fillStyle = "White";
-            ctx.font = "10px Poppins";
-
-            // Generate 36 points of mock data
-            const points = 36;
-            const spacing = w / (points - 1);
-            
-            ctx.beginPath();
-            for (let i = 0; i < points; i++) {
-                // Mock wave for temperature simulation
-                let val = 40 + Math.sin(i * 0.5) * 10; 
-                let x = i * spacing;
-                let y = h - (val * 1.5); // Scaled to fit canvas
-
-                if (i === 0) ctx.moveTo(x, y);
-                else ctx.lineTo(x, y);
-                
-                // Add tiny dots every 6 hours
-                if (i % 6 === 0) {
-                    ctx.fillText(Math.round(val) + "°", x, y - 5);
-                }
-            }
-            ctx.stroke();
-        }
-
-        // Redraw when window resizes for full responsiveness
-        window.addEventListener('resize', draw36HourChart);
-        window.onload = draw36HourChart;
-    </script>
 </body>
 </html>
