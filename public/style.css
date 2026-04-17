@@ -88,6 +88,11 @@ button:hover {
     background: goldenrod;
 }
 
+section:hover {
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
+
 /* ================= WEATHER CARD ================= */
 #weather {
     margin-top: 20px;
@@ -264,6 +269,7 @@ body.snow::after {
 /* MOBILE */
 @media (max-width: 600px) {
     h1 {
+        color: #00e6e6;
         font-size: 1.8rem;
     }
 
