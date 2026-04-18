@@ -21,18 +21,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* 🎯 CENTERING LOGIC */
+   <style>
+        /* 🎯 CENTERING LOGIC - Ensures searched city stays in the middle */
         #weather {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centers the city card horizontally */
+            align-items: center; 
             justify-content: center;
             text-align: center;
             width: 100%;
             margin: 20px auto;
         }
 
+        #forecast {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        /* Standardized button and search centering */
+        .search-box {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+       </style>
+       
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
