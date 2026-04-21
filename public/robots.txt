@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow: /
 
 Sitemap: https://weather-dashboard-all-ss.vercel.app/sitemap.xml
